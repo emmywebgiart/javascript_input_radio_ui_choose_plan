@@ -24,6 +24,20 @@ body {
     width: 350px;
 }
 
+.plan_header {
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.plan_header h2 {
+    font-size: 24px;
+}
+
+.plan_header, 
+.plan_body,
+.plan_footer {
+    padding: 15px;
+}
+
 .list_input .item_input + .item_input {
     margin-top: 15px;
 }
@@ -72,6 +86,7 @@ body {
     transition: .5s;
 }
 
+.plan_label:hover,
 .plan_input:checked ~ .plan_label {
     border: 2px solid #6213b1; 
 }
@@ -87,4 +102,62 @@ body {
     opacity: 1;
     visibility: visible;
     transform: scale(1);
+}
+
+.plan_pricing,
+.plan_name {
+    align-items: center;
+    display: flex; 
+    justify-content: space-between; 
+}
+
+.plan_name_type {
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    white-space: nowrap; 
+}
+
+.plan_name_description {
+    white-space: nowrap;
+}
+
+.plan_footer {
+    border-top: 1px solid #f1f1f1;
+}
+
+.content_buttons {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.button {
+    border-radius: 10px; 
+    font-weight: 500;
+    padding: 8px 15px; 
+}
+
+.button_secondary {
+    background: none; 
+    border: 1px solid #c3c7cc;  
+}
+
+.button_secondary:hover {
+    border: 1px solid #a5a8ac;  
+}
+
+.button_primary {
+    background: #6213b1;
+    border: none; 
+    color: #fff; 
+}
+
+.button_primary:hover {
+    background: #490c85;
+}
+
+@media (max-width: 767px) {
+    .card_plan {
+        width: calc(100% - 30px);
+    }
 }

@@ -11,52 +11,52 @@
 <body>
     <main class="main">
         <div class="card_plan">
-            <div class="plan_header" style="padding: 15px; border-bottom: 1px solid #f1f1f1;">
-                <h2 style="font-size: 24px;">Select plan</h2>
-                <p>Simple and flexible per-user pricing</p>
+            <div class="plan_header">
+                <h2>Selecciona un plan</h2>
+                <p>Precio por usuario simples y flexibles</p>
             </div>
-            <div class="plan_body" style="padding: 15px;">
+            <div class="plan_body">
                 <div class="list_input">
                     <div class="item_input">    
-                        <input type="radio" name="plan" id="basic_plan" class="plan_input" value="10 dollars">
+                        <input type="radio" name="plan" id="basic_plan" class="plan_input" value="10 dolares">
                         <label for="basic_plan" class="plan_label">
-                            <div style="display: flex; justify-content: space-between; align-items: center;">
-                                <p><strong>$10/mth</strong></p>
+                            <div class="plan_pricing">
+                                <p><strong>$10/mes</strong></p>
                                 <div>
                                     <span class="label_checked">
                                         <i class="fas fa-check"></i>
                                     </span>
                                 </div>
                             </div>
-                            <div style="display: flex; justify-content: space-between; align-items: center;">
-                                <p style="white-space: nowrap; text-overflow: ellipsis; overflow: hidden;">Basic plan</p>
-                                <span style="white-space: nowrap;">Billed anually</span>
+                            <div class="plan_name">
+                                <p class="plan_name_type">Plan Básico</p>
+                                <span class="plan_name_description">Facturado anualmente</span>
                             </div>
                         </label>
                     </div>
                     <div class="item_input">
-                        <input type="radio" name="plan" id="business_plan" class="plan_input" value="20 dollars">
+                        <input type="radio" name="plan" id="business_plan" class="plan_input" value="20 dolares">
                         <label for="business_plan" class="plan_label">
-                            <div style="display: flex; justify-content: space-between; align-items: center;">
-                                <p><strong>$20/mth</strong></p>
+                            <div class="plan_pricing">
+                                <p><strong>$20/mes</strong></p>
                                 <div>
                                     <span class="label_checked">
                                         <i class="fas fa-check"></i>
                                     </span>
                                 </div>
                             </div>
-                            <div style="display: flex; justify-content: space-between; align-items: center;">
-                                <p style="white-space: nowrap; text-overflow: ellipsis; overflow: hidden;">Business plan</p>
-                                <span style="white-space: nowrap;">Billed anually</span>
+                            <div class="plan_name">
+                                <p class="plan_name_type">Plan Premium</p>
+                                <span class="plan_name_description">Facturado anualmente</span>
                             </div>
                         </label>
                     </div>
                 </div>
             </div>
-            <div class="plan_footer" style="padding: 15px; border-top: 1px solid #f1f1f1;">
-                <div style="display: flex; justify-content: end; gap: 10px;">
-                    <button id="button_cancel" style="background: none; padding: 8px 15px; border-radius: 10px; border: 1px solid #c3c7cc; font-weight: bold;">Cancel</button>
-                    <button id="button_confirm" style="background: none; border: none; background: #6213b1; color: #fff; border-radius: 10px; padding: 8px 15px; font-weight: bold;">Confirm</button>
+            <div class="plan_footer">
+                <div class="content_buttons">
+                    <button id="button_cancel" class="button button_secondary">Cancelar</button>
+                    <button id="button_confirm" class="button button_primary">Confirmar</button>
                 </div>
             </div>
         </div>
@@ -74,11 +74,12 @@
     }
 
     buttonConfirm.onclick = () => {
-        inputsPlan.forEach((item) => {
-            if(item.checked) {
-                console.log("Haz seleccionado el plan con un costo de: " + item.value)
-            }
-        })
+        let selected = document.querySelector('input[name="plan"]:checked');
+        if (selected !== null) {
+            alert(`Haz seleccionado el plan con un costo de: ${selected.value}`)
+        } else {
+            alert("No haz seleccionado ningún plan")
+        }
     }
 </script>
 </html>
