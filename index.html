@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.14.0/css/all.css">
     <link rel="stylesheet" href="./css/styles.css">
 </head>
+
 <body>
     <main class="main">
         <div class="card_plan">
@@ -17,7 +19,7 @@
             </div>
             <div class="plan_body">
                 <div class="list_input">
-                    <div class="item_input">    
+                    <div class="item_input">
                         <input type="radio" name="plan" id="basic_plan" class="plan_input" value="10 dolares">
                         <label for="basic_plan" class="plan_label">
                             <div class="plan_pricing">
@@ -62,24 +64,6 @@
         </div>
     </main>
 </body>
-<script>
-    let buttonCancel = document.getElementById("button_cancel");
-    let buttonConfirm = document.getElementById("button_confirm");
-    const inputsPlan = document.getElementsByName("plan");
+<script src="./js/main.js"></script>
 
-    buttonCancel.onclick = () => {
-        inputsPlan.forEach((item) => {
-            item.checked = false
-        })
-    }
-
-    buttonConfirm.onclick = () => {
-        let selected = document.querySelector('input[name="plan"]:checked');
-        if (selected !== null) {
-            alert(`Haz seleccionado el plan con un costo de: ${selected.value}`)
-        } else {
-            alert("No haz seleccionado ningún plan")
-        }
-    }
-</script>
 </html>
